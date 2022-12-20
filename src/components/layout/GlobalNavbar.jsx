@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { pages, settings } from '../../utils/navbar-utils';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -13,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { pages, settings } from '../../utils/navbar-utils';
+import { Link } from 'react-router-dom';
 
 const GlobalNavbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,7 +35,7 @@ const GlobalNavbar = () => {
   };
 
   return (
-    <AppBar position="static" color="success">
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -118,7 +119,7 @@ const GlobalNavbar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link>{page}</Link>
               </Button>
             ))}
           </Box>
