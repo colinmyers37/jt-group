@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <GlobalNavbar />
+      <div className="w-full h-full bg-red"></div>
     </>
   );
 }
