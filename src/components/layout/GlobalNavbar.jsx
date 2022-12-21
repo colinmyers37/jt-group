@@ -12,35 +12,47 @@ const GlobalNavbar = () => {
   }
 
   return (
-    <nav className="p-2 bg-white shadow md:flex md:items-center md:justify-between">
-      <div className="flex justify-between items-center">
-        <div className="">
-          <img
-            src={logo}
-            alt="Jenson-Thievon Group"
-            className="md:h-[60px] w-auto h-[45px]"
-          />
-        </div>
+    <div className="shadow-md w-full fixed top-0 left-0">
+      <div className="md:flex items-center justify-between bg-white py-2 md:px-10 px-7">
         <div
-          className="text-3xl cursor-pointer mx-1 mt-2 md:hidden block"
-          onClick={handleNav}
+          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+    text-gray-800"
+        >
+          <span className="text-3xl text-indigo-600 mr-1 pt-2">
+            <img
+              src={logo}
+              alt="Jenson-Thievon Group"
+              className="md:h-[60px] w-auto h-[45px]"
+            />
+          </span>
+        </div>
+
+        <div
+          onClick={() => setOpenNav(!openNav)}
+          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
           <ion-icon name={openNav ? 'close' : 'menu'}></ion-icon>
         </div>
+
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-6 transition-all duration-500 ease-in ${
+            openNav ? 'top-[73px] ' : 'top-[-490px]'
+          }`}
+        >
+          {pages.map((page) => (
+            <li key={page} className="md:ml-8 text-xl md:my-0 my-5">
+              <NavLink
+                to={`/${page}`}
+                className="text-gray-800 hover:text-gray-400 duration-500"
+              >
+                {page}
+              </NavLink>
+            </li>
+          ))}
+          <Button>Contact Us</Button>
+        </ul>
       </div>
-      <ul
-        className={`md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-2 top-[-400px] transition-all ease-in duration-500 ${
-          openNav ? 'top-10 opacity-100' : 'top-[-490px]'
-        } md:opacity-100 opacity-0`}
-      >
-        {pages.map((page) => (
-          <li className="mx-4 my-6 md:my-0">
-            <NavLink to={`/${page}`}>{page}</NavLink>
-          </li>
-        ))}
-        <Button>Contact Us</Button>
-      </ul>
-    </nav>
+    </div>
   );
 };
 
