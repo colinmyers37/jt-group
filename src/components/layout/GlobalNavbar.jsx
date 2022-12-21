@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../img/jt-logo.jpg';
 import { pages, settings } from '../../utils/navbar-utils';
+import Button from '../UI/Button';
 
 const GlobalNavbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -37,9 +38,7 @@ const GlobalNavbar = () => {
             <NavLink to={`/${page}`}>{page}</NavLink>
           </li>
         ))}
-        <button className="bg-green-400 text-white duration-500 px-6 py-2 mx-4 hover:bg-green-500 rounded">
-          Contact Us
-        </button>
+        <Button>Contact Us</Button>
       </ul>
     </nav>
   );
