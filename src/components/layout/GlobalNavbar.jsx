@@ -12,24 +12,22 @@ const GlobalNavbar = () => {
   }
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-2 md:px-10 px-7">
+    <div className="shadow-md w-full bg-white">
+      <div className="md:flex items-center justify-between bg-transparent py-2 md:px-10 px-7">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
     text-gray-800"
         >
-          <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            <img
-              src={logo}
-              alt="Jenson-Thievon Group"
-              className="md:h-[60px] w-auto h-[45px]"
-            />
-          </span>
+          <img
+            src={logo}
+            alt="Jenson-Thievon Group"
+            className="md:h-[60px] w-auto h-[45px]"
+          />
         </div>
 
         <div
           onClick={() => setOpenNav(!openNav)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+          className="text-3xl absolute right-5 top-4 cursor-pointer md:hidden"
         >
           <ion-icon name={openNav ? 'close' : 'menu'}></ion-icon>
         </div>

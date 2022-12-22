@@ -11,12 +11,14 @@ function App() {
   return (
     <>
       <GlobalNavbar />
-      <Routes>
-        <Route index path="/Home" element={<Home />} />
-        <Route path="/Available" element={<Available />} />
-        <Route path="/Testimonials" element={<Testimonials />} />
-        <Route path="/About" element={<About />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route index path="/Home" element={<Home />} />
+          <Route path="/Available" element={<Available />} />
+          <Route path="/Testimonials" element={<Testimonials />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </main>
     </>
   );
 }
